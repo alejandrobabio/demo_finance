@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926173411) do
+ActiveRecord::Schema.define(version: 20150926182233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,10 +21,12 @@ ActiveRecord::Schema.define(version: 20150926173411) do
     t.integer  "book_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "company_id"
   end
 
   add_index "accountings", ["book_id"], name: "index_accountings_on_book_id", using: :btree
   add_index "accountings", ["commodity_id"], name: "index_accountings_on_commodity_id", using: :btree
+  add_index "accountings", ["company_id"], name: "index_accountings_on_company_id", using: :btree
 
   create_table "books", force: :cascade do |t|
     t.string   "name"
@@ -46,4 +48,5 @@ ActiveRecord::Schema.define(version: 20150926173411) do
 
   add_foreign_key "accountings", "books"
   add_foreign_key "accountings", "commodities"
+  add_foreign_key "accountings", "companies"
 end
