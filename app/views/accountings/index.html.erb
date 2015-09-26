@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Commodity</th>
       <th>Book</th>
       <th colspan="3"></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @accountings.each do |accounting| %>
       <tr>
+        <td><%= accounting %></td>
         <td><%= accounting.commodity %></td>
         <td><%= accounting.book %></td>
         <td><%= link_to 'Show', accounting %></td>
