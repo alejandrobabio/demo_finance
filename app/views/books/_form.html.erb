@@ -15,6 +15,10 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+    <%= f.label :commodity_ids %>
+    <%= f.collection_select :commodity_ids, Commodity.all, :id, :name, {}, {multiple: true} %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
