@@ -16,6 +16,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :company_ids %>
+    <%= f.collection_select :company_ids, Company.all, :id, :name, {selected: Company.all.map(&:id)}, {multiple: true} %>
+  </div>
+  <div class="field">
     <%= f.label :commodity_ids %>
     <%= f.collection_select :commodity_ids, Commodity.all, :id, :name, {}, {multiple: true} %>
   </div>
